@@ -12,5 +12,5 @@ sudo apt-get install -y -qq git-core > /dev/null 2>&1
 echo "Cloning the config..."
 git clone $GIT_REPO . > /dev/null 2>&1
 
-./implant.sh
+source ./implant.sh
 

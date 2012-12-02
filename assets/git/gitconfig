@@ -18,4 +18,5 @@ lg = log -p
 wu = log --stat origin..@{0}
 mycommits = log --abbrev-commit --pretty=oneline --author='Daniel Barsotti' --since=last.mon --reverse
 graph = log --graph
+pom = push origin master
 

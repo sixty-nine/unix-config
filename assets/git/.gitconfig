@@ -1,0 +1,21 @@
+[user]
+	name = Daniel Barsotti
+	email = daniel.barsotti@liip.ch
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	tag = auto
+	pager = true
+	ui = auto
+[alias]
+st = status
+ci = commit
+br = branch
+co = checkout
+df = diff
+lg = log -p
+wu = log --stat origin..@{0}
+mycommits = log --abbrev-commit --pretty=oneline --author='Daniel Barsotti' --since=last.mon --reverse
+graph = log --graph
+

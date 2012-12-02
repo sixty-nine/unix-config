@@ -35,3 +35,11 @@ function notify() {
   }
 }
 
+function cript() {
+  openssl des3 -e -in $1 -out $1.crypt
+}
+
+function decript() {
+  openssl des3 -d -in ${1} -out ${1%.crypt}
+}
+

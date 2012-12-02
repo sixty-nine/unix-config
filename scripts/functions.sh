@@ -36,10 +36,10 @@ function notify() {
 }
 
 function cript() {
-  openssl des3 -e -in $1 -out $1.crypt
+  openssl enc -aes-256-cbc -salt -in $1 -out $1.crypt
 }
 
 function decript() {
-  openssl des3 -d -in ${1} -out ${1%.crypt}
+  openssl enc -aes-256-cbc -d -in ${1} -out ${1%.crypt}
 }
 

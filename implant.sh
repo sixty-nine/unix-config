@@ -6,12 +6,16 @@ BASEPATH=$SETUP_PATH/scripts
 
 source $SETUP_PATH/scripts/includes.sh
 
+checkRequirement apt-get
+checkRequirement git
+
 # ----- INSTALL DEPENDENCIES
 
 log_info "Installing dependencies..."
 
 sudo apt-get install -y -qq toilet toilet-fonts
 sudo apt-get install -y -qq fortune-mod fortunes
+sudo apt-get install -y -qq mc
 
 # ------ VIM
 

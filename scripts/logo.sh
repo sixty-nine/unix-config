@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/includes.sh
+BASEPATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+source $BASEPATH/includes.sh
 
 checkRequirement toilet
 checkRequirement fortune

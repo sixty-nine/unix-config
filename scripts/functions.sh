@@ -1,21 +1,5 @@
 #!/bin/bash
 
-function isInstalled() {
-  command -v $1 &>/dev/null; echo $?
-}
-
-function checkRequirement() {
-  [[ $(isInstalled $1) == 0 ]] || {
-    echo -e $RED"This program requires the '$1' application. Aborting."$NORMAL >&2; exit 1;
-  }
-}
-
-function notify() {
-  [ $(isInstalled notify-send) == 0 ] && {
-    notify-send -i $1 $2
-  }
-}
-
 function log() {
   LEVEL_COLOR=$1
   LEVEL_TEXT=$2
@@ -33,5 +17,21 @@ function log_info() {
 function log_error() {
   MESSAGE=$1
   log $RED 'ERROR' '' "$MESSAGE"
+}
+
+function isInstalled() {
+  command -v $1 &>/dev/null; echo $?
+}
+
+function checkRequirement() {
+  [[ $(isInstalled $1) == 0 ]] || {
+    log_error "This program requires the '$1' application. Aborting."; exit 1;
+  }
+}
+
+function notify() {
+  [ $(isInstalled notify-send) == 0 ] && {
+    notify-send -i $1 $2
+  }
 }
 

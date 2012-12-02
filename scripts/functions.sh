@@ -36,10 +36,27 @@ function notify() {
 }
 
 function cript() {
-  openssl enc -aes-256-cbc -salt -in $1 -out $1.crypt
+  INFILE=$1
+  OUTFILE=$2
+  openssl enc -aes-256-cbc -salt -in $INFILE -out $OUTFILE
 }
 
 function decript() {
-  openssl enc -aes-256-cbc -d -in ${1} -out ${1%.crypt}
+  INFILE=$1
+  OUTFILE=$2
+  openssl enc -aes-256-cbc -d -in $INFILE -out $OUTFILE
+}
+
+function backup() {
+  TMPFILE=$(mktemp)
+  read -p "Enter password: " PASSWORD
+  tar cvzf $TMPFILE $1
+  openssl enc -pass pass:$PASSWORD -aes-256-cbc -salt -in $TMPFILE -out $(basename $1).bak
+  rm $TMPFILE
+}
+
+function restore() {
+  INFILE=$1
+  openssl enc -d -aes-256-cbc -salt -in $INFILE | tar xvz
 }
 

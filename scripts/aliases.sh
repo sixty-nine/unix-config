@@ -14,4 +14,5 @@ alias ....="cd ../../.."
 alias cd..="cd .."
 
 alias cdd='cd /home/dev'
+alias gitst='git st'
 

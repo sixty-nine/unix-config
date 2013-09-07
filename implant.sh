@@ -23,7 +23,7 @@ log_info "Setting up vim..."
 
 sudo apt-get install -y -qq vim vim-common vim-runtime
 
-cp -R $SETUP_PATH/assets/vim/vim $HOME_DIR/.vim
+cp -R $SETUP_PATH/assets/vim/vim/* $HOME_DIR/.vim
 cp $SETUP_PATH/assets/vim/vimrc $HOME_DIR/.vimrc
 
 cd $HOME_DIR/.vim/bundle

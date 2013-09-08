@@ -8,3 +8,7 @@ source $BASEPATH/colors.sh
   source $BASEPATH/vagrant-aliases.sh
 }
 
+[[ $(isInstalled apache2) == 0 ]] && {
+  source $BASEPATH/apache2-aliases.sh
+}
+

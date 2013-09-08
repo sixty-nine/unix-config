@@ -49,5 +49,9 @@ cat assets/vhost.asset | m4 -DSITEPATH=$SITEPATH | m4 -DVHOSTNAME=$VHOST > $VHOS
 log_info "Inserted alias $VHOST into $HOSTS_FILE"
 echo -e "127.0.0.1\t$VHOST" >> $HOSTS_FILE
 
+log_info "Enabling virtual host"
+a2ensite $VHOST &>/dev/null
+service apache2 reload &>/dev/null
+
 log_info "Done"
 

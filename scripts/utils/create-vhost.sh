@@ -13,7 +13,7 @@ fi
 
 VHOST_PATH=/etc/apache2/sites-available/
 HOSTS_FILE=/etc/hosts
-VHOST_TEMPLATE=templates/vhost.template
+VHOST_TEMPLATE=$BASEPATH/templates/vhost.template
 
 # ----- Read the VirtualHost name
 

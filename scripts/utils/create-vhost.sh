@@ -13,6 +13,7 @@ fi
 
 VHOST_PATH=/etc/apache2/sites-available/
 HOSTS_FILE=/etc/hosts
+VHOST_TEMPLATE=templates/vhost.template
 
 # ----- Read the VirtualHost name
 
@@ -44,7 +45,7 @@ fi
 echo 
 
 log_info "Creating file $VHOST_PATH$VHOST"
-cat assets/vhost.asset | m4 -DSITEPATH=$SITEPATH | m4 -DVHOSTNAME=$VHOST > $VHOST_PATH$VHOST
+cat $VHOST_TEMPLATE | m4 -DSITEPATH=$SITEPATH | m4 -DVHOSTNAME=$VHOST > $VHOST_PATH$VHOST
 
 log_info "Inserted alias $VHOST into $HOSTS_FILE"
 echo -e "127.0.0.1\t$VHOST" >> $HOSTS_FILE

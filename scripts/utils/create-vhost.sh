@@ -15,30 +15,50 @@ VHOST_PATH=/etc/apache2/sites-available/
 HOSTS_FILE=/etc/hosts
 VHOST_TEMPLATE=$BASEPATH/templates/vhost.template
 
-# ----- Read the VirtualHost name
-
-echo -n -e "${YELLOW}Enter the virtual host name: ${NORMAL}"
-read VHOST
-
-[[ $(ls -1 $VHOST_PATH | grep $VHOST &>/dev/null; echo $?) == 1 ]] || {
-  log_error "The virtual host $VHOST alread exists"
-  exit
+function readVirtualHost() {
+  echo -n -e "${YELLOW}Enter the virtual host name: ${NORMAL}"
+  read VHOST
 }
 
-[[ $(grep [[:space:]]$VHOST$ $HOSTS_FILE &>/dev/null; echo $?) == 1 ]] || {
-  log_error "The virtual host is already in /ets/hosts"
-  exit
+function readWebsitePath() {
+  echo -n -e "${YELLOW}Enter the path to the site: ${NORMAL}"
+  read SITEPATH
 }
 
-# ----- Read the path containing the website
+function checkVirtualHost() {
+  [[ $(ls -1 $VHOST_PATH | grep ^$VHOST$ &>/dev/null; echo $?) == 1 ]] || {
+    log_error "The virtual host $VHOST alread exists"
+    exit
+  }
 
-echo -n -e "${YELLOW}Enter the path to the site: ${NORMAL}"
-read SITEPATH
+  [[ $(grep [[:space:]]$VHOST$ $HOSTS_FILE &>/dev/null; echo $?) == 1 ]] || {
+    log_error "The virtual host is already in /ets/hosts"
+    exit
+  }
+}
 
-if [ ! -d $SITEPATH ]; then
-  log_error "Path not found $SITEPATH"
-  exit
+function checkWebsitePath() {
+  if [ -z "$SITEPATH" ]; then
+    log_error "Path not given"
+    exit
+  fi
+
+  if [ ! -d $SITEPATH ]; then
+    log_error "Path not found $SITEPATH"
+    exit
+  fi
+}
+
+if [ "$#" == 0 ]; then
+  readVirtualHost
+  readWebsitePath
+else
+  VHOST=$1
+  SITEPATH=$2
 fi
+
+checkVirtualHost
+checkWebsitePath
 
 # ----- Create the virtual host and add it to the known hosts
 

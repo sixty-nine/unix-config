@@ -6,12 +6,16 @@ function log() {
   MSG_COLOR=$3
   MSG_TEXT=$4
 
-  echo -e "${LEVEL_COLOR:-$YELLOW}[${LEVEL_TEXT:-INFO}]${MSG_COLOR:-$NORMAL} ${MSG_TEXT}"
+  echo -e "${LEVEL_COLOR:-$GREEN}[${LEVEL_TEXT:-INFO}]${MSG_COLOR:-$NORMAL} ${MSG_TEXT}"
 }
 
 function log_info() {
   MESSAGE=$1
   log '' '' '' "$MESSAGE"
+}
+
+function log_warning() {
+  log $YELLOW 'WARNING' '' "$MESSAGE"
 }
 
 function log_error() {

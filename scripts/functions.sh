@@ -15,6 +15,7 @@ function log_info() {
 }
 
 function log_warning() {
+  MESSAGE=$1
   log $YELLOW 'WARNING' '' "$MESSAGE"
 }
 

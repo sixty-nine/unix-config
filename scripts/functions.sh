@@ -65,3 +65,6 @@ function restore() {
   openssl enc -d -aes-256-cbc -salt -in $INFILE | tar xvz
 }
 
+function svndiff() {
+  svn diff $@ | colordiff | less -R;
+}

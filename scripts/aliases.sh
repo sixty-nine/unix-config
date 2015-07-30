@@ -19,3 +19,5 @@ alias gitci='git ci'
 
 alias usage='du --max-depth=1 --block-size=MiB | sort -n -r | head -25'
 
+alias myip='dig +short my.ip @outsideip.net'
+

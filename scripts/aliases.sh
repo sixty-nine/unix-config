@@ -18,6 +18,7 @@ alias gitst='git st'
 alias gitci='git ci'
 
 alias usage='du --max-depth=1 --block-size=MiB | sort -n -r | head -25'
+alias ddu='du -sh */ 2> /dev/null | sort -hr'
 
 alias myip='dig +short my.ip @outsideip.net'
 

@@ -22,3 +22,7 @@ alias ddu='du -sh */ 2> /dev/null | sort -hr'
 
 alias myip='dig +short my.ip @outsideip.net'
 
+alias phpinfo='php -r "phpinfo();"'
+
+# Force git to run in englsh
+alias git='LANGUAGE=en_US.UTF-8 git'

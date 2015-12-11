@@ -16,6 +16,7 @@ co = checkout
 df = diff
 lg = log -p
 wu = log --stat origin..@{0}
+sl = log --abbrev-commit --pretty=oneline
 mycommits = log --abbrev-commit --pretty=oneline --author='Daniel Barsotti' --since=last.mon --reverse
 graph = log --graph
 pom = push origin master

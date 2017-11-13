@@ -21,4 +21,4 @@ mycommits = log --abbrev-commit --pretty=oneline --author='Daniel Barsotti' --si
 graph = log --graph
 pom = push origin master
 meld = difftool -y -x meld
-
+sf = show --pretty="" --name-only

@@ -22,3 +22,4 @@ graph = log --graph
 pom = push origin master
 meld = difftool -y -x meld
 sf = show --pretty="" --name-only
+rbi2 = rebase -i HEAD~2

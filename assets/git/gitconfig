@@ -1,5 +1,5 @@
 [user]
-	name = Daniel Barsotti
+	name = Daniele Barsotti
 	email = <email>
 [color]
 	diff = auto
@@ -23,3 +23,7 @@ pom = push origin master
 meld = difftool -y -x meld
 sf = show --pretty="" --name-only
 rbi2 = rebase -i HEAD~2
+rbi3 = rebase -i HEAD~3
+cim = commit -m
+diffc = diff --cached
+fwl = push --force-with-lease

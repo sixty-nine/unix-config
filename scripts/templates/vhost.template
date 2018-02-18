@@ -4,8 +4,9 @@
   ServerName VHOSTNAME
 
   <Directory "SITEPATH">
+    AllowOverride all
+    Require all granted
     Allow from All
   </Directory>
 
 </VirtualHost>
-

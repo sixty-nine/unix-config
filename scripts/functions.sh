@@ -1,5 +1,11 @@
 #!/bin/bash
 
+function git-oops() {
+  git add .
+  git ci -m 'oops'
+  git rebase -i HEAD~2
+}
+
 function log() {
   LEVEL_COLOR=$1
   LEVEL_TEXT=$2

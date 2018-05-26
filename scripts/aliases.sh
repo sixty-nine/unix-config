@@ -24,5 +24,7 @@ alias myip='dig +short my.ip @outsideip.net'
 
 alias phpinfo='php -r "phpinfo();"'
 
+alias dmesg='dmesg -T'
+
 # Force git to run in englsh
 alias git='LANGUAGE=en_US.UTF-8 git'

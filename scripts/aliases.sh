@@ -28,3 +28,12 @@ alias dmesg='dmesg -T'
 
 # Force git to run in englsh
 alias git='LANGUAGE=en_US.UTF-8 git'
+
+alias shutdown='sudo shutdown -h now'
+alias hibernate='sudo systemctl hibernate'
+
+alias dmesg='dmesg -T'
+
+alias gti='git'
+alias nvmi='nvm i'
+alias nvmu='nvm use'

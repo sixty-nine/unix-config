@@ -4,6 +4,7 @@ alias ll="ls -lhF"
 alias l="ls -lhF"
 
 alias df='df -h'
+alias free='free -h'
 
 alias untar='tar xvf'
 alias untarz='tar xvzf'

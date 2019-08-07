@@ -38,3 +38,19 @@ alias dmesg='dmesg -T'
 alias gti='git'
 alias nvmi='nvm i'
 alias nvmu='nvm use'
+
+alias acs='apt-cache search'
+
+alias serv-running='sudo service --status-all | grep \ +'
+alias serv-stopped='sudo service --status-all | grep \ -'
+alias serv-stop='sudo systemctl stop'
+alias serv-start='sudo systemctl start'
+alias serv-status='sudo systemctl status'
+alias serv-disable='sudo systemctl disable'
+alias serv-enable='sudo systemctl enable'
+
+alias scanim='for i in {01..20}.png ; do scrot -s $i ; echo $i ; done ; convert -delay 50 {01..20}.png -layers Optimize anim.gif'
+
+alias rrm='shred -zvu -n  5'
+
+
